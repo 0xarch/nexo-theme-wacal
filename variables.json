@@ -1,0 +1,32 @@
+{
+    "verticalNavbar": false,
+    "useDefaultCopyrightText": true,
+    "copyrightText": "",
+    "headerObjects": [
+        [
+            "/",
+            "Home"
+        ],
+        [
+            "/archive/1",
+            "Archives"
+        ],
+        [
+            "/category/1",
+            "Categories"
+        ],
+        [
+            "/tag/1",
+            "Tags"
+        ],
+        [
+            "/about/",
+            "About"
+        ],
+        [
+            "/status/",
+            "gnome-feather-tool",
+            true
+        ]
+    ]
+}
