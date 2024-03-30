@@ -39,10 +39,19 @@
 }
 #toc>.li-2{
     font-size: large;
-    padding-left: 0.65rem;
+    padding-left: 0.5rem;
 }
 #toc>.li-3{
+    padding-left: 0.75rem;
+}
+#toc>.li-4{
+    padding-left: 1rem;
+}
+#toc>.li-5{
     padding-left: 1.25rem;
+}
+#toc>.li-6{
+    padding-left: 1.5rem;
 }
 #toc>li:hover{
     color: var(--blue3);
