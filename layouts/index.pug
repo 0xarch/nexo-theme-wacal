@@ -31,7 +31,7 @@ html(lang="zh")
                     small= i18n('Posted recently')
             ul.intros(style='grid-template-columns:repeat(auto-fill,minmax(480px,1fr))')
                 each bid in sort.defaultOrder.slice(0,10)
-                    +post_li(ID[bid])
+                    +post_li(IDMap.get(bid))
             if sort.defaultOrder.length>10
                 +foot_navigator(Math.ceil(sort.defaultOrder.length/10),1,'page')
         +gnome_footer()
