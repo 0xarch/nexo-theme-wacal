@@ -12,6 +12,6 @@ html
         main.content#content
             ul.intros(style='grid-template-columns:repeat(auto-fill,minmax(480px,1fr))')
                 each bid in cycling.value
-                    +post_li(IDMap.get(bid))
+                    +post_li(IDMap.get(+bid))
                 +foot_navigator(cycling.total,cycling.now,'category/s'+varias.name)
         +gnome_footer()
