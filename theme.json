@@ -35,9 +35,9 @@
             "name": "Post list page",
             "from": "page.pug",
             "to": "page",
-            "cycling": true,
+            "use_split": true,
             "option": {
-                "cycling": {
+                "@split": {
                     "parent": "sort.defaultOrder",
                     "every": 10
                 }
@@ -47,9 +47,9 @@
             "name": "Archive page",
             "from": "archive.pug",
             "to": "archive",
-            "cycling": true,
+            "use_split": true,
             "option": {
-                "cycling": {
+                "@split": {
                     "parent": "sort.defaultOrder",
                     "every": 10
                 }
@@ -59,9 +59,9 @@
             "name": "Category Template",
             "from": "category.pug",
             "to": "category",
-            "cycling": true,
+            "use_split": true,
             "option": {
-                "cycling": {
+                "@split": {
                     "parent": "site.categories",
                     "every": 48
                 }
@@ -70,14 +70,14 @@
         {
             "name": "Category (Each) Template",
             "from": "category_every.pug",
-            "to": "category/s${varias.name}",
-            "varias": true,
-            "cycling": true,
+            "to": "category/s{{each.name}}",
+            "use_foreach": true,
+            "use_split": true,
             "option": {
-                "varias": {
+                "@foreach": {
                     "parent": "site.categories"
                 },
-                "cycling": {
+                "@split": {
                     "parent": "varias.value.included",
                     "every": 5
                 }
@@ -87,9 +87,9 @@
             "name": "Tag Template",
             "from": "tag.pug",
             "to": "tag",
-            "cycling": true,
+            "use_split": true,
             "option": {
-                "cycling": {
+                "@split": {
                     "parent": "site.tags",
                     "every": 48
                 }
@@ -98,15 +98,15 @@
         {
             "name": "Tag (Each) Template",
             "from": "tag_every.pug",
-            "to": "tag/s${varias.name}",
-            "varias": true,
-            "cycling": true,
+            "to": "tag/s{{each.name}}",
+            "use_foreach": true,
+            "use_split": true,
             "option": {
-                "varias": {
+                "@foreach": {
                     "parent": "site.tags"
                 },
-                "cycling": {
-                    "parent": "varias.value.included",
+                "@split": {
+                    "parent": "each.value.included",
                     "every": 5
                 }
             }
