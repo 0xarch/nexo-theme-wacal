@@ -61,3 +61,29 @@ mixin counter_section()
                 a
                     b= i18n('Tags')
                     b= i18n(site.tag_count+' in total')
+
+mixin license_notice(post)
+    if post.license.isCreativeCommons()
+        a.Heading(href='https://creativecommons.org/')
+            = i18n('Distribution License Agreement') + ' '
+            i.fa-brands.fa-creative-commons(aria-hidden='true')
+        .inner
+            - let is = (v)=>post.license.includes(v)
+            if is('BY')
+                span BY
+                    i.fa-brands.fa-creative-commons-by
+            if is('NC')
+                span NC
+                    i.fa-brands.fa-creative-commons-nc
+            if is('ND')
+                span ND
+                    i.fa-brands.fa-creative-commons-nd
+            if is('SA')
+                span SA
+                    i.fa-brands.fa-creative-commons-sa
+    else if post.license.type === 'REPRINT'
+        .Heading= i18n('Distribution License Agreement')
+        .container= i18n('@CC_REPRINT')
+    else
+        .Heading= i18n('Distribution License Agreement')
+        .container= i18n('@CC_PRIVATE')
